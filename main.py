@@ -6,6 +6,10 @@ from haii_scrapper import *
 # Advisory
 combine_advisory_info()
 
+### SCIENCE ###
+# Publications
+get_publications_info()
+
 ### NEWS ###
 # News
 get_news_info()

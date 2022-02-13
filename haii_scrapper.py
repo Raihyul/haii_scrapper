@@ -14,6 +14,7 @@ def to_csv(csv_name, data):
         for each in data:
             wt.writerow(each)
 
+
 ##### MAIN #####
 # Advisory info
 def get_advisory_info(advisory):
@@ -51,6 +52,26 @@ def get_advisory_image():
     for image in advisory_images:
         request.urlretrieve("https://" + parse.quote(image["src"][8:]), f"{DOWNLOAD_IMAGE_DIRECTORY}1. Main/3. Collaboration/2. Advisory/advisory-{num}-{image['alt']}.{image['src'].split('.')[-1]}")
         num += 1 
+
+
+##### SCIENCE #####
+# Publications info
+def get_publications_info():
+    publications_soup = BeautifulSoup(science_publications, "html.parser")
+    all_info = publications_soup.find_all("div", {"class": "single-comments"})
+    publications_info = [["people", "year", "first_content", "second_content"]]
+    for info in all_info:
+        people= info.find("h4").text
+        year = info.find("span").text
+        contents = info.find_all("p")
+        if len(contents) == 1:
+            first_content = contents[0].text
+            second_content = ""
+        else:
+            first_content = contents[0].text
+            second_content = contents[1].text
+        publications_info.append([people, year, first_content, second_content])
+    to_csv("publications", publications_info)
 
 
 ##### NEWS #####
