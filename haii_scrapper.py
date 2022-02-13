@@ -3,7 +3,8 @@ from bs4 import BeautifulSoup
 from urllib import parse, request
 import csv
 
-DOWNLOAD_IMAGE_DIRECTORY = "../frontend/src/images/"
+DOWNLOAD_IMAGE_DIRECTORY = "../frontend/src/assets/images/"
+IMAGE_DIRECTORY = "../../assets/images/"
 
 ##### COMMON #####
 # array data -> csv file
@@ -38,7 +39,7 @@ def combine_advisory_info():
         name_eng = advisory_info_eng[i]["name"]
         affiliation_kor = advisory_info_kor[i]["affiliation"]
         affiliation_eng = advisory_info_eng[i]["affiliation"]
-        image_directory = f"../../images/1. Main/3. Advisory/2. Advisory/advisory-{i+1}-{name_kor}.{advisory_info_kor[i]['image_type']}"
+        image_directory = f"{IMAGE_DIRECTORY}1. Main/3. Advisory/2. Advisory/advisory-{i+1}-{name_kor}.{advisory_info_kor[i]['image_type']}"
         total_advisory_info.append([name_kor, name_eng, affiliation_kor, affiliation_eng, image_directory])
     to_csv("main_advisory", total_advisory_info)
 
@@ -61,7 +62,7 @@ def get_news_info():
     num = 0
     for info in all_info:
         image_type = info.find("img")["src"].split(".")[-1]
-        thumbnail_url = f"../../images/5. News/news-{len(all_info) - num}.{image_type}"
+        thumbnail_url = f"{IMAGE_DIRECTORY}5. News/news-{len(all_info) - num}.{image_type}"
         date = info.find("div", {"class": "date"}).text
         url = info.find("a")["href"]
         title = info.find("a").text
@@ -102,7 +103,7 @@ def combine_investors_info():
     for i in range(len(investors_info_kor)):
         name_kor = investors_info_kor[i]["name"]
         name_eng = investors_info_eng[i]["name"]
-        image_directory = f"../../images/6. Partners/investors-{i+1}-{name_kor}.{investors_info_kor[i]['image_type']}"
+        image_directory = f"{IMAGE_DIRECTORY}6. Partners/investors-{i+1}-{name_kor}.{investors_info_kor[i]['image_type']}"
         total_investors_info.append([name_kor, name_eng, image_directory])
     to_csv("partners_investors", total_investors_info)
 
@@ -136,7 +137,7 @@ def combine_partners_info():
     for i in range(len(partners_info_kor)):
         name_kor = partners_info_kor[i]["name"]
         name_eng = partners_info_eng[i]["name"]
-        image_directory = f"../../images/6. Partners/partners-{i+1}-{name_kor}.{partners_info_kor[i]['image_type']}"
+        image_directory = f"{IMAGE_DIRECTORY}6. Partners/partners-{i+1}-{name_kor}.{partners_info_kor[i]['image_type']}"
         total_partners_info.append([name_kor, name_eng, image_directory])
     to_csv("partners_partners", total_partners_info)
 
@@ -170,7 +171,7 @@ def get_photo_info():
     num = 0
     for info in all_info:
         image_type = info.find("img")["src"].split(".")[-1]
-        image_directory = f"../../images/7. Gallery/gallery-{len(all_info) - num}.{image_type}"
+        image_directory = f"{IMAGE_DIRECTORY}7. Gallery/gallery-{len(all_info) - num}.{image_type}"
         title = info.find("h2").text
         photo_info.append([image_directory, title])
         num += 1
@@ -214,7 +215,7 @@ def combine_members_info():
         department_eng = members_info_eng[i]["department"]
         introduction_kor = members_info_kor[i]["introduction"]
         introduction_eng = members_info_eng[i]["introduction"]
-        image_directory = f"../../images/8. Members/members-{i+1}-{name_kor}.{members_info_kor[i]['image_type']}"
+        image_directory = f"{IMAGE_DIRECTORY}8. Members/members-{i+1}-{name_kor}.{members_info_kor[i]['image_type']}"
         total_members_info.append([name_kor, name_eng, department_kor, department_eng, introduction_kor, introduction_eng, image_directory])
     to_csv("members", total_members_info)
 
