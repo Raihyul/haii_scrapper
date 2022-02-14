@@ -34,26 +34,26 @@ combine_members_info()
 
 
 
-##### Get Image #####
+# ##### Get Image #####
 
-### MAIN ###
-# Advisory
-get_advisory_image()
+# ### MAIN ###
+# # Advisory
+# get_advisory_image()
 
-### NEWS ###
-# News
-get_news_image()
+# ### NEWS ###
+# # News
+# get_news_image()
 
-### PARTNERS ###
-# Investors
-get_investors_image()
-# Partners
-get_partners_image()
+# ### PARTNERS ###
+# # Investors
+# get_investors_image()
+# # Partners
+# get_partners_image()
 
-### GALLERY ###
-# Photo
-get_photo_image()
+# ### GALLERY ###
+# # Photo
+# get_photo_image()
 
-### MEMBERS ###
-# Members
-get_members_image()
+# ### MEMBERS ###
+# # Members
+# get_members_image()

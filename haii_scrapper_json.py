@@ -1,6 +1,5 @@
 from haii_contents import *
 from bs4 import BeautifulSoup
-from urllib import parse, request
 import json
 from collections import OrderedDict
 
@@ -16,7 +15,7 @@ def to_json(file_name, keys, values):
     for i in range(len(keys)):
         file_data[keys[i]] = values[i]
     
-    with open(f"{JSON_DIRECTORY}{file_name}.json", "w", encoding="utf8") as make_file:
+    with open(f"{file_name}.json", "w", encoding="utf8") as make_file:
         json.dump(file_data, make_file, ensure_ascii=False, indent="\t")
 
 
@@ -72,7 +71,7 @@ def get_publications_info():
         else:
             first_content = contents[0].text
             second_content = contents[1].text
-        publications_info.append({"id": num+1, "people": people, "year": year, "first_content": first_content, "second_content": second_content})
+        publications_info.append({"id": num+1, "people": people, "year": year, "firstContent": first_content, "secondContent": second_content})
         num += 1
     to_json("science_publications", ["common"], [publications_info])
 
@@ -177,7 +176,7 @@ def get_photo_info():
         image_type = info.find("img")["src"].split(".")[-1]
         image_directory = f"{IMAGE_DIRECTORY}7. Gallery/gallery-{len(all_info) - num}.{image_type}"
         title = info.find("h2").text
-        photo_info.append({"id": num+1, "image_directory": image_directory, "title": title})
+        photo_info.append({"id": num+1, "image": image_directory, "title": title})
         num += 1
     to_json("gallery_photo",["common"], [photo_info])
 
