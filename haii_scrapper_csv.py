@@ -40,7 +40,7 @@ def combine_advisory_info():
         name_eng = advisory_info_eng[i]["name"]
         affiliation_kor = advisory_info_kor[i]["affiliation"]
         affiliation_eng = advisory_info_eng[i]["affiliation"]
-        image_directory = f"{IMAGE_DIRECTORY}1. Main/3. Advisory/2. Advisory/advisory-{i+1}-{name_kor}.{advisory_info_kor[i]['image_type']}"
+        image_directory = f"{IMAGE_DIRECTORY}1. Main/3. Collaboration/2. Advisory/advisory-{i+1}-{name_kor}.{advisory_info_kor[i]['image_type']}"
         total_advisory_info.append([name_kor, name_eng, affiliation_kor, affiliation_eng, image_directory])
     to_csv("main_advisory", total_advisory_info)
 

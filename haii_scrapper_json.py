@@ -47,7 +47,7 @@ def combine_advisory_info():
         name_eng = advisory_info_eng[i]["name"]
         affiliation_kor = advisory_info_kor[i]["affiliation"]
         affiliation_eng = advisory_info_eng[i]["affiliation"]
-        image_directory = f"{IMAGE_DIRECTORY}1. Main/3. Advisory/2. Advisory/advisory-{i+1}-{name_kor}.{advisory_info_kor[i]['image_type']}"
+        image_directory = f"{IMAGE_DIRECTORY}1. Main/3. Collaboration/2. Advisory/advisory-{i+1}-{name_kor}.{advisory_info_kor[i]['image_type']}"
         advisory_kor.append({"id": i+1, "name": name_kor, "affiliation": affiliation_kor})
         advisory_eng.append({"id": i+1, "name": name_eng, "affiliation": affiliation_eng})
         image.append(image_directory)
