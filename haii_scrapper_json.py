@@ -16,7 +16,7 @@ def to_json(file_name, keys, values):
     for i in range(len(keys)):
         file_data[keys[i]] = values[i]
     
-    with open(f"{file_name}.json", "w", encoding="utf8") as make_file:
+    with open(f"{JSON_DIRECTORY}{file_name}.json", "w", encoding="utf8") as make_file:
         json.dump(file_data, make_file, ensure_ascii=False, indent="\t")
 
 
