@@ -1,4 +1,6 @@
-from haii_scrapper import *
+# from haii_scrapper_csv import *
+from haii_scrapper_json import *
+from haii_scrapper_image import *
 
 ##### Get Info #####
 
