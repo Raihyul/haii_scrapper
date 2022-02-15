@@ -4,33 +4,36 @@ from haii_scrapper_image import *
 
 ##### Get Info #####
 
-### MAIN ###
-# Advisory
-combine_advisory_info()
+### EVERY PAGE TO SINGLE JSON FILE ###
+to_json()
 
-### SCIENCE ###
-# Publications
-get_publications_info()
+# ### MAIN ###
+# # Advisory
+# combine_advisory_info()
 
-### NEWS ###
-# News
-get_news_info()
+# ### SCIENCE ###
+# # Publications
+# get_publications_info()
 
-### PARTNERS ###
-# Investors
-combine_investors_info()
-# Partners
-combine_partners_info()
+# ### NEWS ###
+# # News
+# get_news_info()
 
-### GALLERY ###
-# Video
-get_video_info()
-# Photo
-get_photo_info()
+# ### PARTNERS ###
+# # Investors
+# combine_investors_info()
+# # Partners
+# combine_partners_info()
 
-### MEMBERS ###
-# Members
-combine_members_info()
+# ### GALLERY ###
+# # Video
+# get_video_info()
+# # Photo
+# get_photo_info()
+
+# ### MEMBERS ###
+# # Members
+# combine_members_info()
 
 
 
